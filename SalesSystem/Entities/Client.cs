@@ -14,5 +14,7 @@ namespace SalesSystem.Entities
         public string CNPJ_CPF { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
+
+        public ICollection<Sale> sales { get; set; }
     }
 }

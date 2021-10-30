@@ -17,5 +17,7 @@ namespace SalesSystem.Entities
 
         [ForeignKey("Category")]
         public int CategoryId { get; set; }
+        public Category category { get; set; }
+        public ICollection<ProductsSales> Sales { get; set; }
     }
 }

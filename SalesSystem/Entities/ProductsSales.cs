@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SalesSystem.Entities
 {
-    public class ProductsSale
+    public class ProductsSales
     {
         public int IdSale { get; set; }
         public int IdProduct { get; set; }
@@ -13,6 +13,10 @@ namespace SalesSystem.Entities
         public decimal UnityValue { get; set; }
         public decimal TotalValue { get; set; }
 
-        public Category category { get; set; }
+        public Product Product { get; set; }
+        public Sale Sale { get; set; }
+
+
+
     }
 }
