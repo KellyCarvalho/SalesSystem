@@ -19,6 +19,8 @@ namespace SalesSystem.Entities
 
         public decimal Total { get; set; }
 
+        public ICollection<ProductsSales> Products { get; set; }
+
    
 
       
