@@ -1,1 +1,55 @@
-﻿
+﻿@{
+    ViewData["Title"] = "Products";
+
+}
+@model List<SalesSystem.Entities.Product>;
+
+<h2>Products</h2>
+
+<hr />
+
+<table class="table table-bordered">
+
+    <thead>
+        <tr style="background-color:#f977">
+
+            <th>Id</th>
+            <th>Description</th>
+            <th>Quantity</th>
+            <th>Value</th>
+            <th>Category</th>
+
+
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr onclick="Update(@item.Id)" style="cursor:pointer;">
+                <td>@item.Id</td>
+                <td>@item.Description</td>
+                <td>@item.Quantity</td>
+                <td>@item.Value</td>
+                <td>@item.CategoryId</td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+<br />
+
+<button type="button" class="btn btn-block btn-primary" onclick="Register()"> Register Product</button>
+
+<script>
+
+    function Register() {
+        window.location = window.origin + "\\Product\\Registration";
+    }
+
+    function Update(Id) {
+        window.location = window.origin + "\\Product\\Registration\\" + Id;
+    }
+
+</script>

@@ -1,1 +1,81 @@
 ﻿
+@{
+    ViewData["Title"] = "Clients";
+
+}
+<h2>Clients</h2>
+<hr />
+
+@model SalesSystem.Models.ClientViewModel
+
+@{
+    var disabled = (Model.Id == null) ? "disabled" : string.Empty;
+}
+
+<form asp-controller="Client" asp-action="Registration" method="post">
+    <input type="hidden" asp-for="Id" value="@Model.Id" />
+
+    <div class="form-group">
+
+
+        <div class="col-4">
+            <label>Name</label>
+            <input type="text" asp-for="Name" value="@Model.Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+
+        <div class="col-4">
+            <label>Email</label>
+            <input type="text" asp-for="Email" value="@Model.Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="col-4">
+            <label>Phone</label>
+            <input type="text" asp-for="Phone" value="@Model.Phone" class="form-control" />
+            <span asp-validation-for="Phone" class="text-danger"></span>
+        </div>
+
+        <div class="col-4">
+            <label>CPF/CNPJ</label>
+            <input type="text" asp-for="CNPJ_CPF" value="@Model.CNPJ_CPF" class="form-control" />
+            <span asp-validation-for="CNPJ_CPF" class="text-danger"></span>
+        </div>
+
+
+
+        <br />
+        <div class="col">
+            <button type="button" class="btn btn-info" onclick="New()">New Client</button>
+            <button type="submit" class="btn btn-success">Save</button>
+            <button type="button" class="btn btn-warning" onclick="AllClients()">All Clients</button>
+            <button type="button" class="btn btn-danger" @disabled onclick="Delete(@Model.Id)">Delete Client</button>
+        </div>
+    </div>
+
+
+
+
+</form>
+<script>
+
+    function New() {
+        Request("Registration") ;
+    }
+
+    function AllClients() {
+        Request("");
+
+    }
+
+
+    function Delete(Id) {
+        Request("Delete\\"+Id);
+
+    }
+
+    function Request(request) {
+        window.location = window.origin + "\\Client\\"+request;
+    }
+</script>

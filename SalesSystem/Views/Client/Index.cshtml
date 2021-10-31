@@ -1,1 +1,54 @@
-﻿
+﻿@{
+    ViewData["Title"] = "Clients";
+
+}
+@model List<SalesSystem.Entities.Client>;
+
+<h2>Customers</h2>
+
+<hr />
+
+<table class="table table-bordered">
+
+    <thead>
+        <tr style="background-color:#f977">
+
+            <th>Id</th>
+            <th>Name</th>
+            <th>CPF/CNPJ</th>
+            <th>Phone</th>
+            <th>Email</th>
+
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr onclick="Update(@item.Id)" style="cursor:pointer;">
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.CNPJ_CPF</td>
+            <td>@item.Phone</td>
+            <td>@item.Email</td>
+           
+        </tr>
+        }
+    </tbody>
+</table>
+
+<br />
+
+<button type="button" class="btn btn-block btn-primary" onclick="Register()"> Register Customer</button>
+
+<script>
+
+    function Register() {
+        window.location = window.origin + "\\Client\\Registration";
+    }
+
+    function Update(Id) {
+        window.location = window.origin + "\\Client\\Registration\\" + Id;
+    }
+
+</script>
