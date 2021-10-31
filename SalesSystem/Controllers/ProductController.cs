@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using SalesSystem.DAL;
 using SalesSystem.Entities;
 using SalesSystem.Models;
@@ -21,10 +22,10 @@ namespace SalesSystem.Controllers
        
         public IActionResult Index()
         {
-            /*IEnumerable<Product> products = mContext.Product.ToList();
-            mContext.Dispose();*/
+            IEnumerable<Product> products = mContext.Product.Include(x=>x.Category).ToList();
+            mContext.Dispose();
 
-            return View();
+            return View(products);
         }
 
          [HttpGet]
