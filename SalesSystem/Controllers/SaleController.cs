@@ -155,7 +155,13 @@ namespace SalesSystem.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet("ReadProductValue/{ProductId}/")]
+        public decimal ReadProductValue(int productId)
+        {
+       
 
+            return (decimal) mContext.Product.Where(x => x.Id == productId).Select(y => y.Value).FirstOrDefault();
+        }
 
 
     }

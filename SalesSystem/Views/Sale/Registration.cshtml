@@ -35,7 +35,7 @@
         <div class="col-4">
             <label>Products</label>
        
-            <select class="form-control input-group-lg" asp-items="@Model.ProductsList"></select>
+            <select id="productCbo" onchange="FindProductPrice()" class="form-control input-group-lg" asp-items="@Model.ProductsList"></select>
      
         </div>
 
@@ -88,4 +88,12 @@
     function Request(request) {
         window.location = window.origin + "\\Sale\\"+request;
     }
+
+    function FindProductPrice() {
+
+        var ProductId = document.getElementById("productCbo");
+        alert(ProductId.value);
+     
+    }
+
 </script>
