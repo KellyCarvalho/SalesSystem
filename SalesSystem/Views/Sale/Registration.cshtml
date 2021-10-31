@@ -48,12 +48,66 @@
 
             </div>
 
+            <div class="col-2">
+
+                <label> Quantity</label>
+                <input id="quantityTxt" type="number" class="form-control" value="1" onchange="ToCalculateSubTotal()" />
+
+            </div>
+
+            <div class="col-2">
+
+                <label> Subtotal</label>
+                <input id="subTotalTxt" type="number" class="form-control" disabled />
+
+            </div>
+
+            <div class="col-2">
+
+                <br />
+                <button type="button" class="btn btn-info" onclick="AddProduct()">Add</button>
+                <br />
+
+            </div>
+
         </div>
       
 
+        <div class="form-group">
+
+            <div class="col-md-12">
+                
+                <table class="table table-bordered">
+                    <thead class="thread-inverse">
+                        <tr style="background-color:aquamarine">
+                            <th>Product</th>
+                            <th>Unitary Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                        </tr>
+
+                    </thead>
+                    <tbody id="gridProducts">
+
+                 
+                    </tbody>
+
+                </table>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+         
+            <div class="col-md-3">
+                <label>Total</label>
+
+                <input id="totalTxt" asp-for="Total" type="text" value="@Model.Total" class="form-control" />
+                <span asp-validation-for="Total" class="text-danger"></span>
 
 
-
+            </div>
+        </div>
 
         <br />
         <div class="col">
@@ -92,8 +146,28 @@
     function FindProductPrice() {
 
         var ProductId = document.getElementById("productCbo");
-        alert(ProductId.value);
+        var url = `/ReadProductValue/${ProductId.value}`;
+
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == XMLHttpRequest.DONE) {
+           
+
+                document.getElementById("unitaryPriceTxt").value = xhr.responseText;
+                ToCalculateSubTotal();
+            }
+        }
+        xhr.open('GET', url, false);
+        xhr.send(null);
+    }
+
+    function ToCalculateSubTotal() {
+        var quantity = document.getElementById("quantityTxt").value;
+        var price = document.getElementById("unitaryPriceTxt").value
+        var subtotal = quantity * price;
+        document.getElementById("subTotalTxt").value = subtotal;
      
+
     }
 
 </script>
