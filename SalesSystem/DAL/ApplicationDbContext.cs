@@ -25,12 +25,12 @@ namespace SalesSystem.DAL
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<ProductsSales>()
-                .HasKey(x => new { x.IdSale, x.IdProduct });
+                .HasKey(x => new { x.SaleId, x.ProductId });
 
             modelBuilder.Entity<ProductsSales>()
                 .HasOne(x => x.Product)
                 .WithMany(y=>y.Sales)
-                .HasForeignKey(x=>x.IdSale);
+                .HasForeignKey(x=>x.SaleId);
         }
 
 

@@ -113,7 +113,7 @@ namespace SalesSystem.Controllers
                 {
 
                     Id = entity.Id,
-                    Date = (DateTime)entity.Date,
+                    Date = DateTime.Now,
                     ClientId = entity.ClientId,
                     Total = entity.Total,
                     Products = JsonConvert.DeserializeObject<ICollection<ProductsSales>>(entity.JsonProducts)

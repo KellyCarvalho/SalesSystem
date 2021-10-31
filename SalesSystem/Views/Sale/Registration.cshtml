@@ -17,12 +17,15 @@
 
     <div class="form-group">
 
+    
 
-        <div class="col-4">
-            <label>Date</label>
-            <input type="date" asp-for="Date" value="@Model.Date" class="form-control" />
-            <span asp-validation-for="Date" class="text-danger"></span>
-        </div>
+            <div class="col-4">
+                <label>Date</label>
+                <input id="date" type="date" asp-for="Date" value="@Model.Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+       
+       
 
         <div class="col-4">
             <label>Customer</label>
@@ -80,6 +83,7 @@
                 <table class="table table-bordered">
                     <thead class="thread-inverse">
                         <tr style="background-color:aquamarine">
+                     
                             <th>Product</th>
                             <th>Unitary Price</th>
                             <th>Quantity</th>
@@ -109,6 +113,10 @@
             </div>
         </div>
 
+        <textarea style="display:none" asp-for="JsonProducts" id="JsonProductsTxt" class="col">
+
+</textarea>
+
         <br />
         <div class="col">
             <button type="button" class="btn btn-info" onclick="New()">New Sale</button>
@@ -123,6 +131,16 @@
 
 </form>
 <script>
+
+    function formatValue(num) {
+        return parseFloat(Math.round(num * 100) / 100).toFixed(2).replace(",", ".");
+    }
+   
+
+    var Itens = new Object();
+    Itens.Products = new Array();
+    var gridProducts = document.getElementById("gridProducts");
+    
 
     function New() {
         Request("Registration") ;
@@ -167,6 +185,49 @@
         var subtotal = quantity * price;
         document.getElementById("subTotalTxt").value = subtotal;
      
+
+    }
+
+    function AddProduct() {
+
+        var ProductId = document.getElementById("productCbo");
+        var Quantity = document.getElementById("quantityTxt").value;
+        var UnitaryValue = document.getElementById("unitaryPriceTxt").value;
+        var Total = document.getElementById("subTotalTxt").value;
+
+  
+
+        Itens.Products.push({
+     
+            "ProductId": ProductId.value,
+            "Quantity": Quantity,
+            "UnitaryValue": formatValue(UnitaryValue),
+            "TotalValue": formatValue(Total)
+        });
+
+        console.log(Itens.Products);
+
+
+        document.getElementById("JsonProductsTxt").value = JSON.stringify(Itens.Products);
+ 
+       
+        var GridLine = "<tr id'" + ProductId.value + "'>" +
+            " <td>" + ProductId.options[ProductId.selectedIndex].text + "</td>" +
+            "<td>" + Quantity + "</td>" +
+            "<td>" + UnitaryValue + "</td>" +
+            "<td>" + Total + "</td>";
+       
+
+        gridProducts.innerHTML += GridLine;
+   
+
+        var AllTotal = Number(document.getElementById("totalTxt").value.toString().replace(",", ".")) + Number(Total);
+
+        console.log(AllTotal);
+
+        document.getElementById("totalTxt").value = AllTotal;
+
+
 
     }
 
