@@ -1,0 +1,59 @@
+﻿
+@{
+ViewData["Title"]="Categories";
+
+}
+<h2>Category</h2>
+<hr />
+
+@model SalesSystem.Models.CategoryViewModel
+
+@{
+var disabled = (Model.Id==null) ? "disabled": string.Empty;
+}
+
+<form asp-controller="Category" asp-action="Registration" method="post">
+    <input type="hidden" asp-for="Id" value="@Model.Id" />
+
+    <div class="form-group">
+
+      
+        <div class="col-4">
+            <label>Description</label>
+            <input type="text" asp-for="Description" value="@Model.Description" class="form-control" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <br />
+        <div class="col">
+            <button type="button" class="btn btn-info" onclick="New()">New Category</button>
+            <button type="submit" class="btn btn-success">Save</button>
+            <button type="button" class="btn btn-warning" onclick="AllCategories()">All Categories</button>
+            <button type="button" class="btn btn-danger" @disabled onclick="Delete(@Model.Id)">Delete Category</button>
+        </div>
+    </div>
+
+    
+
+
+</form>
+<script>
+
+    function New() {
+        Request("Registration") ;
+    }
+
+    function AllCategories() {
+        Request("");
+      
+    }
+
+
+    function Delete(Id) {
+        Request("Delete\\"+Id);
+     
+    }
+
+    function Request(request) {
+        window.location = window.origin + "\\Category\\"+request;
+    }
+</script>

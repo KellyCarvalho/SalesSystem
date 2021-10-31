@@ -9,13 +9,16 @@ namespace SalesSystem.DAL
 {
     public class ApplicationDbContext : DbContext
     {
+     
 
-        public DbSet<Category> Categoria { get; set; }
+        public DbSet<Category> Category { get; set; }
         public DbSet<Product> Product { get; set; }
         public DbSet<User> User { get; set; }
         public DbSet<Client> Client { get; set; }
         public DbSet<Sale> Sale { get; set; }
         public DbSet<ProductsSales> ProductsSales { get; set; }
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options):base(options) { }
+     
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

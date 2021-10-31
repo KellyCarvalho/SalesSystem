@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using SalesSystem.DAL;
+using SalesSystem.Entities;
 using SalesSystem.Models;
 using System;
 using System.Collections.Generic;
@@ -18,8 +21,19 @@ namespace SalesSystem.Controllers
             _logger = logger;
         }
 
+        protected ApplicationDbContext Repository;
+
+        [ActivatorUtilitiesConstructor]
+        public HomeController(ApplicationDbContext repository)
+        {
+            Repository = repository;
+           
+        }
+
         public IActionResult Index()
         {
+          
+
             return View();
         }
 
