@@ -1,6 +1,6 @@
 ﻿
 
-<h1>Teste</h1>
+<h1>Sales Total by Product</h1>
 <canvas id="myChart" width="400" height="400"></canvas>
 @section Scripts{
 
@@ -26,13 +26,11 @@
                         label: '# of Votes',
                         data: [@Html.Raw(@ViewBag.Values)],
                         backgroundColor: [
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(2, 180, 0, 1)'
+                            @Html.Raw(@ViewBag.Colors)
                         ],
                         borderColor: [
                       
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(2, 180, 0, 1)'
+                            @Html.Raw(@ViewBag.Colors)
                     
                         ],
                         borderWidth: 1

@@ -42,6 +42,7 @@ namespace SalesSystem.Controllers
             {
                 labels += "'"+list[i].Description.ToString().Trim()+"' ,";
                 values += "'"+ list[i].TotalSales.ToString() + "' ,";
+                colors += "'" + String.Format("#{0:X6}", random.Next(0x1000000)) + "',";
       
 
             }
