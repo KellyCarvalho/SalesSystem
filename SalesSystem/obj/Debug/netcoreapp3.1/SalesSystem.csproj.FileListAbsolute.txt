@@ -81,7 +81,6 @@ C:\Estudo DDD Com aspnet core\SalesSystem\SalesSystem\obj\Debug\netcoreapp3.1\Ra
 C:\Estudo DDD Com aspnet core\SalesSystem\SalesSystem\obj\Debug\netcoreapp3.1\Razor\Views\Client\Registration.cshtml.g.cs
 C:\Estudo DDD Com aspnet core\SalesSystem\SalesSystem\obj\Debug\netcoreapp3.1\Razor\Views\Product\Index.cshtml.g.cs
 C:\Estudo DDD Com aspnet core\SalesSystem\SalesSystem\obj\Debug\netcoreapp3.1\Razor\Views\Product\Registration.cshtml.g.cs
-C:\Estudo DDD Com aspnet core\SalesSystem\SalesSystem\obj\Debug\netcoreapp3.1\Razor\Views\Report\Graphic.cshtml.g.cs
 C:\Estudo DDD Com aspnet core\SalesSystem\SalesSystem\obj\Debug\netcoreapp3.1\Razor\Views\Sale\Index.cshtml.g.cs
 C:\Estudo DDD Com aspnet core\SalesSystem\SalesSystem\obj\Debug\netcoreapp3.1\Razor\Views\Sale\Registration.cshtml.g.cs
 C:\Estudo DDD Com aspnet core\SalesSystem\SalesSystem\obj\Debug\netcoreapp3.1\Razor\Views\Setting\Index.cshtml.g.cs
@@ -89,3 +88,4 @@ C:\Estudo DDD Com aspnet core\SalesSystem\SalesSystem\obj\Debug\netcoreapp3.1\Ra
 C:\Estudo DDD Com aspnet core\SalesSystem\SalesSystem\obj\Debug\netcoreapp3.1\Razor\Views\Category\Registration.cshtml.g.cs
 C:\Estudo DDD Com aspnet core\SalesSystem\SalesSystem\bin\Debug\netcoreapp3.1\xunit.abstractions.dll
 C:\Estudo DDD Com aspnet core\SalesSystem\SalesSystem\bin\Debug\netcoreapp3.1\xunit.core.dll
+C:\Estudo DDD Com aspnet core\SalesSystem\SalesSystem\obj\Debug\netcoreapp3.1\Razor\Views\Report\Index.cshtml.g.cs

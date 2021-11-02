@@ -14,11 +14,12 @@ namespace SalesSystem.Entities
 
         [ForeignKey("Client")]
         public int ClientId { get; set; }
+     
 
         public Client Client { get; set; }
 
         public decimal Total { get; set; }
-
+        
         public ICollection<ProductsSales> Products { get; set; }
 
    
