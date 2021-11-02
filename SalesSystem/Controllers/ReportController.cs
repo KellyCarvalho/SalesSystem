@@ -19,9 +19,19 @@ namespace SalesSystem.Controllers
         public IActionResult Index()
         {
 
-            var list = mContext.ProductsSales.AsEnumerable().GroupBy(x => x.ProductId).Select(y => new GraphicViewModel { ProductId = y.First().ProductId,TotalSales=y.Sum(s=>s.Quantity)}).ToList();
+            var list = mContext.ProductsSales.AsEnumerable()
+                 .GroupBy(x => x.ProductId)
+                 .Select(y => new GraphicViewModel 
+                 { ProductId = y.First()
+                     .ProductId,
+                     Description = mContext.Product.Where(x=>x.Id==y.First().ProductId).First().Description,
+                     TotalSales=y.Sum(s=>s.Quantity),
+                     
+                     })
+                     .ToList();
 
            
+
 
             string values = string.Empty;
             string labels = string.Empty;
@@ -30,8 +40,8 @@ namespace SalesSystem.Controllers
            var random = new Random();
            for (int i = 0; i < list.Count; i++)
             {
-                values += list[i].ProductId.ToString()+",";
-                labels +="'"+ list[i].TotalSales.ToString() + "' ,";
+                labels += "'"+list[i].Description.ToString().Trim()+"' ,";
+                values += "'"+ list[i].TotalSales.ToString() + "' ,";
       
 
             }
