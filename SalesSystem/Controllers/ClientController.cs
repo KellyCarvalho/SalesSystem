@@ -47,6 +47,7 @@ namespace SalesSystem.Controllers
         [HttpPost]
         public IActionResult Registration(ClientViewModel entity) 
         {
+            var a = entity;
             if (ModelState.IsValid)
             {
                 Client objClient = new Client() {

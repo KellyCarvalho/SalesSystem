@@ -1,2 +1,19 @@
 ﻿<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
 <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<sessionState mode="[Off|InProc|StateServer|SQLServer|Custom]"
+              timeout="number of minutes"
+              cookieName="session identifier cookie name"
+              cookieless="[true|false|AutoDetect|UseCookies|UseUri|UseDeviceProfile]"
+              regenerateExpiredSessionId="[True|False]"
+              sessionIDManagerType="session manager type"
+              sqlConnectionString="sql connection string"
+              sqlCommandTimeout="number of seconds"
+              allowCustomSqlDatabase="[True|False]"
+              useHostingIdentity="[True|False]"
+              stateConnectionString="tcpip=server:port"
+              stateNetworkTimeout="number of seconds"
+              customProvider="custom provider name"
+              compressionEnabled="[True|False]"
+              sqlConnectionRetryInterval="number of seconds">
+    <providers>...</providers>
+</sessionState>

@@ -27,13 +27,30 @@ namespace SalesSystem
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+        
+
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MyStock")));
+
+
+
+            services.AddHttpContextAccessor();
+
+
+            // Add MVC services to the services container.
+            services.AddMvc();
+            services.AddDistributedMemoryCache(); // Adds a default in-memory implementation of IDistributedCache
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromSeconds(10);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
+
             services.AddControllersWithViews();
+            services.AddRazorPages();
 
-            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer("Server=localhost;Database=Estoque;Trusted_Connection=True;MultipleActiveResultSets=true"));
 
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddSession();
-      
+
 
         }
 
@@ -43,26 +60,35 @@ namespace SalesSystem
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+               
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+         
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             app.UseRouting();
+           
+
+
+
+
+
 
             app.UseAuthorization();
 
+            app.UseSession();
+
             app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
-            });
+             {
+                 endpoints.MapControllerRoute(
+                     name: "default",
+                     pattern: "{controller=Login}/{action=Index}/{id?}");
+             });
         }
     }
 }
