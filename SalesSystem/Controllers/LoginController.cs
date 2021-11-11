@@ -35,8 +35,8 @@ namespace SalesSystem.Controllers
         {
             if (ModelState.IsValid)
             {
-               //var password = Cryptography.GetMd5Hash(loginViewModel.Password);
-               var validation = mContext.User.Where(x=>x.Email==loginViewModel.Email && x.Password==loginViewModel.Password).FirstOrDefault();
+               var password = Cryptography.GetMd5Hash(loginViewModel.Password);
+               var validation = mContext.User.Where(x=>x.Email==loginViewModel.Email && x.Password== password).FirstOrDefault();
                
                 ViewData["ErrorLogin"] = string.Empty;
                 if (validation == null)

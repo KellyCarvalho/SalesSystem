@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewData["Title"] = "Users";
+
+}
+<h2>Clients</h2>
+<hr />
+
+@{
+    var disabled = (Model.Id == null) ? "disabled" : string.Empty;
+}
+@model SalesSystem.Models.UserInsertViewModel
+
+
+
+<form asp-controller="User" asp-action="Registration" method="post">
+    <input type="hidden" asp-for="Id" value="@Model.Id" />
+
+    <div class="form-group">
+
+
+        <div class="col-4">
+            <label>Name</label>
+            <input type="text" asp-for="Name" value="@Model.Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+
+        <div class="col-4">
+            <label>Email</label>
+            <input type="text" asp-for="Email" value="@Model.Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="col-4">
+            <label>Password</label>
+            <input type="text" asp-for="Password" value="@Model.Password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+
+
+        <div class="col">
+            <button type="button" class="btn btn-info" onclick="New()">New User</button>
+            <button type="submit" class="btn btn-success">Save</button>
+            <button type="button" class="btn btn-warning" onclick="AllProducts()">All Users</button>
+            <button type="button" class="btn btn-danger" @disabled onclick="Delete(@Model.Id)">Delete User</button>
+        </div>
+    </div>
+
+
+
+
+</form>
+<script>
+
+    function New() {
+        Request("Registration");
+    }
+
+    function AllUsers() {
+        Request("");
+
+    }
+
+
+    function Delete(Id) {
+        Request("Delete\\" + Id);
+
+    }
+
+    function Request(request) {
+        window.location = window.origin + "\\User\\" + request;
+    }
+</script>

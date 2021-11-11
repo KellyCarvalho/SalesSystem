@@ -91,3 +91,5 @@ C:\Estudo DDD Com aspnet core\SalesSystem\SalesSystem\obj\Debug\netcoreapp3.1\Ra
 C:\Estudo DDD Com aspnet core\SalesSystem\SalesSystem\obj\Debug\netcoreapp3.1\Razor\Views\Login\Index.cshtml.g.cs
 C:\Estudo DDD Com aspnet core\SalesSystem\SalesSystem\obj\Debug\netcoreapp3.1\SalesSystem.csproj.AssemblyReference.cache
 C:\Estudo DDD Com aspnet core\SalesSystem\SalesSystem\obj\Debug\netcoreapp3.1\Razor\Views\Error\Index.cshtml.g.cs
+C:\Estudo DDD Com aspnet core\SalesSystem\SalesSystem\obj\Debug\netcoreapp3.1\Razor\Views\User\Index.cshtml.g.cs
+C:\Estudo DDD Com aspnet core\SalesSystem\SalesSystem\obj\Debug\netcoreapp3.1\Razor\Views\User\Registration.cshtml.g.cs
