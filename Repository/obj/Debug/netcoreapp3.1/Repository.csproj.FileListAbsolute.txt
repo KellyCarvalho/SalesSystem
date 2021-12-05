@@ -1,0 +1,13 @@
+C:\Estudo DDD Com aspnet core\SalesSystem\Repository\bin\Debug\netcoreapp3.1\Repository.deps.json
+C:\Estudo DDD Com aspnet core\SalesSystem\Repository\bin\Debug\netcoreapp3.1\Repository.dll
+C:\Estudo DDD Com aspnet core\SalesSystem\Repository\bin\Debug\netcoreapp3.1\Repository.pdb
+C:\Estudo DDD Com aspnet core\SalesSystem\Repository\bin\Debug\netcoreapp3.1\Domain.dll
+C:\Estudo DDD Com aspnet core\SalesSystem\Repository\bin\Debug\netcoreapp3.1\Domain.pdb
+C:\Estudo DDD Com aspnet core\SalesSystem\Repository\obj\Debug\netcoreapp3.1\Repository.csproj.AssemblyReference.cache
+C:\Estudo DDD Com aspnet core\SalesSystem\Repository\obj\Debug\netcoreapp3.1\Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Estudo DDD Com aspnet core\SalesSystem\Repository\obj\Debug\netcoreapp3.1\Repository.AssemblyInfoInputs.cache
+C:\Estudo DDD Com aspnet core\SalesSystem\Repository\obj\Debug\netcoreapp3.1\Repository.AssemblyInfo.cs
+C:\Estudo DDD Com aspnet core\SalesSystem\Repository\obj\Debug\netcoreapp3.1\Repository.csproj.CoreCompileInputs.cache
+C:\Estudo DDD Com aspnet core\SalesSystem\Repository\obj\Debug\netcoreapp3.1\Repository.csproj.CopyComplete
+C:\Estudo DDD Com aspnet core\SalesSystem\Repository\obj\Debug\netcoreapp3.1\Repository.dll
+C:\Estudo DDD Com aspnet core\SalesSystem\Repository\obj\Debug\netcoreapp3.1\Repository.pdb

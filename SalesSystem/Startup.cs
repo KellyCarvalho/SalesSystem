@@ -35,7 +35,8 @@ namespace SalesSystem
         {
         
 
-            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MyStock")));
+            services.AddDbContext<Repository.Context.ApplicationDbContext>(options => 
+            options.UseSqlServer(Configuration.GetConnectionString("MyStock")));
 
 
 

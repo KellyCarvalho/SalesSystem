@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SalesSystem.DAL
 {
-    public class ApplicationDbContext : DbContext, IApplicationDbContext
+    public class ApplicationDbContext : DbContext
     {
      
 

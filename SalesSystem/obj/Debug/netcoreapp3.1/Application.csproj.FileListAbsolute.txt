@@ -95,3 +95,5 @@ C:\Estudo DDD Com aspnet core\SalesSystem\SalesSystem\obj\Debug\netcoreapp3.1\Ap
 C:\Estudo DDD Com aspnet core\SalesSystem\SalesSystem\obj\Debug\netcoreapp3.1\Application.csproj.CopyComplete
 C:\Estudo DDD Com aspnet core\SalesSystem\SalesSystem\bin\Debug\netcoreapp3.1\Domain.dll
 C:\Estudo DDD Com aspnet core\SalesSystem\SalesSystem\bin\Debug\netcoreapp3.1\Domain.pdb
+C:\Estudo DDD Com aspnet core\SalesSystem\SalesSystem\bin\Debug\netcoreapp3.1\Repository.dll
+C:\Estudo DDD Com aspnet core\SalesSystem\SalesSystem\bin\Debug\netcoreapp3.1\Repository.pdb

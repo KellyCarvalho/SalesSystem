@@ -7,3 +7,4 @@ C:\Estudo DDD Com aspnet core\SalesSystem\Domain\obj\Debug\netcoreapp3.1\Domain.
 C:\Estudo DDD Com aspnet core\SalesSystem\Domain\obj\Debug\netcoreapp3.1\Domain.csproj.CoreCompileInputs.cache
 C:\Estudo DDD Com aspnet core\SalesSystem\Domain\obj\Debug\netcoreapp3.1\Domain.dll
 C:\Estudo DDD Com aspnet core\SalesSystem\Domain\obj\Debug\netcoreapp3.1\Domain.pdb
+C:\Estudo DDD Com aspnet core\SalesSystem\Domain\obj\Debug\netcoreapp3.1\Domain.csproj.AssemblyReference.cache
