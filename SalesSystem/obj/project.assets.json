@@ -2268,6 +2268,30 @@
         "runtime": {
           "lib/netstandard1.1/xunit.core.dll": {}
         }
+      },
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.dll": {}
+        }
+      },
+      "Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.11"
+        },
+        "compile": {
+          "bin/placeholder/Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Repository.dll": {}
+        }
       }
     }
   },
@@ -7631,13 +7655,25 @@
         "xunit.extensibility.core.2.4.1.nupkg.sha512",
         "xunit.extensibility.core.nuspec"
       ]
+    },
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
+    },
+    "Repository/1.0.0": {
+      "type": "project",
+      "path": "../Repository/Repository.csproj",
+      "msbuildProject": "../Repository/Repository.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Domain >= 1.0.0",
       "Microsoft.AspNetCore.Session >= 2.2.0",
       "Microsoft.EntityFrameworkCore >= 5.0.11",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.11",
+      "Repository >= 1.0.0",
       "xunit.extensibility.core >= 2.4.1"
     ]
   },
@@ -7649,9 +7685,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Estudo DDD Com aspnet core\\SalesSystem\\SalesSystem\\SalesSystem.csproj",
-      "projectName": "SalesSystem",
-      "projectPath": "C:\\Estudo DDD Com aspnet core\\SalesSystem\\SalesSystem\\SalesSystem.csproj",
+      "projectUniqueName": "C:\\Estudo DDD Com aspnet core\\SalesSystem\\SalesSystem\\Application.csproj",
+      "projectName": "Application",
+      "projectPath": "C:\\Estudo DDD Com aspnet core\\SalesSystem\\SalesSystem\\Application.csproj",
       "packagesPath": "C:\\Users\\18kel\\.nuget\\packages\\",
       "outputPath": "C:\\Estudo DDD Com aspnet core\\SalesSystem\\SalesSystem\\obj\\",
       "projectStyle": "PackageReference",
@@ -7675,7 +7711,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Estudo DDD Com aspnet core\\SalesSystem\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Estudo DDD Com aspnet core\\SalesSystem\\Domain\\Domain.csproj"
+            },
+            "C:\\Estudo DDD Com aspnet core\\SalesSystem\\Repository\\Repository.csproj": {
+              "projectPath": "C:\\Estudo DDD Com aspnet core\\SalesSystem\\Repository\\Repository.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

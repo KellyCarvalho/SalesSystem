@@ -1,3 +1,7 @@
+using Application.Services;
+using Application.Services.Interfaces;
+using Domain.Interfaces;
+using Domain.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -6,6 +10,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Repository.Entities;
+using Repository.Interfaces;
 using SalesSystem.DAL;
 
 using System;
@@ -48,7 +54,11 @@ namespace SalesSystem
 
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddScoped<IApplicationCategoryService, ApplicationCategoryService>();
+            services.AddScoped<ICategoryService, ServiceCategory>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
 
+            
 
 
 
@@ -82,6 +92,8 @@ namespace SalesSystem
             app.UseAuthorization();
 
             app.UseSession();
+
+           
 
             app.UseEndpoints(endpoints =>
              {

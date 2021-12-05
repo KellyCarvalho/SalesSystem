@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Application.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 using SalesSystem.DAL;
 using SalesSystem.Entities;
 using SalesSystem.Models;
@@ -11,21 +12,21 @@ namespace SalesSystem.Controllers
 {
     public class CategoryController : Controller
     {
-        protected ApplicationDbContext mContext;
+      
+        readonly IApplicationCategoryService ApplicationCategoryService;
 
-        public CategoryController(ApplicationDbContext context)
+        public CategoryController(IApplicationCategoryService applicationCategoryService)
         {
-            mContext = context;
+            ApplicationCategoryService = applicationCategoryService;
         }
        
         public IActionResult Index()
         {
-            IEnumerable<Category> categories = mContext.Category.ToList();
-            mContext.Dispose();
+         
 
-            return View(categories);
+            return View(ApplicationCategoryService.ListCategories());
         }
-
+        /*
         [HttpGet]
         public IActionResult Registration(int? id)
         {
@@ -86,7 +87,7 @@ namespace SalesSystem.Controllers
             return RedirectToAction("Index");
         }
 
-
+        */
 
 
 
